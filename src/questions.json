@@ -1,0 +1,21 @@
+{
+    "questions": [
+        {
+            "title": "Artefato",
+            "rightAnswer": "Defeito visual no display",
+            "wrongAnswers": [
+                "Peça antiga, que não é mais produzida",
+                "Software que não funciona corretamente"
+            ]
+        },
+        {
+            "title": "Boot",
+            "rightAnswer": "Processo de inicialização de um sistema",
+            "wrongAnswers": [
+                "Abreviação de \"robot\"",
+                "Uma Bota para uso como EPI",
+                "Formatação do disco rígido"
+            ]
+        }
+    ]
+}
