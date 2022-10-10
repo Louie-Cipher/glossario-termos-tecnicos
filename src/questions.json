@@ -1,20 +1,28 @@
 {
     "questions": [
         {
-            "title": "Artefato",
+            "title": "Qual a definição de <b>Artefato</b>?",
             "rightAnswer": "Defeito visual no display",
             "wrongAnswers": [
-                "Peça antiga, que não é mais produzida",
+                "Peça muito antiga, que não é mais produzida",
                 "Software que não funciona corretamente"
             ]
         },
         {
-            "title": "Boot",
+            "title": "Qual a definição de <b>Boot</b>?",
             "rightAnswer": "Processo de inicialização de um sistema",
             "wrongAnswers": [
-                "Abreviação de \"robot\"",
-                "Uma Bota para uso como EPI",
-                "Formatação do disco rígido"
+                "Abreviação de robot",
+                "Bota, para uso como EPI",
+                "Instalar um sistema operacional"
+            ]
+        },
+        {
+            "title": "Qual a definição de <b>CPU</b>?",
+            "rightAnswer": "O Processador do computador",
+            "wrongAnswers": [
+                "A caixa que envolve o computador",
+                "Um tipo de memória"
             ]
         }
     ]
