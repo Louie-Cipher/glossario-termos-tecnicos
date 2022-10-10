@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
-import useSound from 'use-sound';
+import * as Sound from './sounds';
 import GameOver from './Components/GameOver';
 import Start from './Components/Start';
 import { questions as questionsJSON } from './questions.json';
 import * as Comp from './styles';
-
-import zeldaItem from './assets/sounds/zelda-item.mp3';
-import wrong1 from './assets/sounds/wrong1.mp3';
-import missionPassed from './assets/sounds/gta-mission-passed.mp3';
 
 export interface Question {
     title: string;
@@ -24,10 +20,6 @@ export default () => {
     const [round, setRound] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
 
-    const [playSuccess] = useSound(zeldaItem, { volume: 0.25 });
-    const [playWrong] = useSound(wrong1, { volume: 0.25 });
-    const [playGameOver] = useSound(missionPassed, { volume: 0.25 });
-
     const loadQuestions = () => {
         setQuestions(questionsJSON.sort(() => Math.random() - 0.5));
     };
@@ -35,6 +27,7 @@ export default () => {
     useEffect(loadQuestions, []);
 
     const startGame = () => {
+        loadQuestions();
         setCurrentScreen('game');
         setPoints(0);
         setRound(1);
@@ -50,8 +43,8 @@ export default () => {
     const handleAnswer = async (answer: string) => {
         if (answer === questions[round - 1].rightAnswer) {
             setPoints(points + 1);
-            playSuccess();
-        } else playWrong();
+            Sound.play(Sound.CorrectSound());
+        } else Sound.play(Sound.WrongSound());
 
         setShowAnswer(true);
         await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -67,7 +60,8 @@ export default () => {
 
     const handleGameOver = () => {
         setCurrentScreen('gameOver');
-        playGameOver();
+        if (points / questions.length > 0.5) Sound.play(Sound.GameWinSound());
+        else Sound.play(Sound.GameLoseSound());
     };
 
     return (
@@ -76,17 +70,37 @@ export default () => {
             <Comp.Content>
                 {currentScreen === 'init' && <Start initGame={startGame} />}
                 {currentScreen === 'gameOver' && (
-                    <GameOver points={points} questionsCount={questions.length} startGame={startGame}/>
+                    <GameOver
+                        points={points}
+                        questionsCount={questions.length}
+                        startGame={startGame}
+                    />
                 )}
                 {currentScreen === 'game' && (
                     <Comp.Question>
                         <Comp.Info>
                             <Comp.CurrentRound>
-                                Termo {round}
+                                Pergunta {round}
                                 <Comp.TotalRounds>/{questions.length}</Comp.TotalRounds>
                             </Comp.CurrentRound>
+                            {round > 1 && (
+                                <Comp.Points>
+                                    {points} {points > 1 ? 'pontos' : 'ponto'}
+                                </Comp.Points>
+                            )}
                         </Comp.Info>
-                        <Comp.QuestionTitle>"{questions[round - 1].title}"</Comp.QuestionTitle>
+                        <Comp.QuestionTitle>
+                            {currentQuestion?.title.split('<b>').map((text, index) => {
+                                if (index === 0) return text;
+                                const [boldText, ...rest] = text.split('</b>');
+                                return (
+                                    <>
+                                        <Comp.QuestionTitleBold>{boldText}</Comp.QuestionTitleBold>
+                                        {rest.join('</b>')}
+                                    </>
+                                );
+                            })}
+                        </Comp.QuestionTitle>
                         <Comp.QuestionAnswers>
                             {answers.map((answer, index) => (
                                 <Comp.QuestionAnswer
@@ -95,21 +109,15 @@ export default () => {
                                     style={{
                                         backgroundColor: showAnswer
                                             ? answer === questions[round - 1].rightAnswer
-                                                ? '#33dc33d1'
-                                                : '#a81e1e'
+                                                ? '#33dc33d6'
+                                                : '#a81e1ed6'
                                             : '#1e1e1e',
                                     }}
                                 >
-                                    "{answer}"
+                                    {answer}
                                 </Comp.QuestionAnswer>
                             ))}
                         </Comp.QuestionAnswers>
-
-                        {points > 0 && (
-                            <Comp.Points>
-                                {points} {points > 1 ? 'pontos' : 'ponto'}
-                            </Comp.Points>
-                        )}
                     </Comp.Question>
                 )}
             </Comp.Content>
