@@ -71,7 +71,6 @@ export const Points = styled.p`
     font-size: 1em;
     font-weight: bold;
     margin: 20px 0;
-    width: 100%;
     text-align: right;
 `;
 
@@ -98,8 +97,13 @@ export const Question = styled.div`
 `;
 
 export const QuestionTitle = styled.p`
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 500;
+`;
+
+export const QuestionTitleBold = styled.span`
+    font-size: 1.6rem;
+    font-weight: 900;
 `;
 
 export const QuestionAnswers = styled.div`
