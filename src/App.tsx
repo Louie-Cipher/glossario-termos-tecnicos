@@ -41,26 +41,29 @@ export default () => {
     };
 
     const handleAnswer = async (answer: string) => {
-        if (answer === questions[round - 1].rightAnswer) {
-            setPoints(points + 1);
-            Sound.play(Sound.CorrectSound());
-        } else Sound.play(Sound.WrongSound());
+        const newPoints = answer === currentQuestion?.rightAnswer ? points + 1 : points;
+        setPoints(newPoints);
+        Sound.play(
+            answer === currentQuestion?.rightAnswer ? Sound.CorrectSound() : Sound.WrongSound()
+        );
 
         setShowAnswer(true);
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
-        if (round === questions.length) handleGameOver();
+        setRound(round + 1);
+        if (round === questions.length) handleGameOver(newPoints);
         else {
-            setRound(round + 1);
             setCurrentQuestion(questions[round]);
             setAnswers(randomizeAnswers(questions[round]));
         }
         setShowAnswer(false);
     };
 
-    const handleGameOver = () => {
+    const handleGameOver = (currentPoints: number) => {
         setCurrentScreen('gameOver');
-        if (points / questions.length > 0.5) Sound.play(Sound.GameWinSound());
+        const percentage = Math.round((currentPoints / questions.length) * 100);
+        console.log('percentage: ', percentage);
+        if (percentage >= 50) Sound.play(Sound.GameWinSound());
         else Sound.play(Sound.GameLoseSound());
     };
 
