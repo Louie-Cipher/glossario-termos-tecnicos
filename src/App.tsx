@@ -4,6 +4,7 @@ import GameOver from './Components/GameOver';
 import Start from './Components/Start';
 import { questions as questionsJSON } from './questions.json';
 import * as Comp from './styles';
+import { Howler } from 'howler';
 
 export interface Question {
     title: string;
@@ -27,6 +28,7 @@ export default () => {
     useEffect(loadQuestions, []);
 
     const startGame = () => {
+        Howler.stop();
         loadQuestions();
         setCurrentScreen('game');
         setPoints(0);
@@ -41,6 +43,7 @@ export default () => {
     };
 
     const handleAnswer = async (answer: string) => {
+        if (showAnswer) return;
         const newPoints = answer === currentQuestion?.rightAnswer ? points + 1 : points;
         setPoints(newPoints);
         Sound.play(
@@ -61,9 +64,7 @@ export default () => {
 
     const handleGameOver = (currentPoints: number) => {
         setCurrentScreen('gameOver');
-        const percentage = Math.round((currentPoints / questions.length) * 100);
-        console.log('percentage: ', percentage);
-        if (percentage >= 50) Sound.play(Sound.GameWinSound());
+        if (currentPoints / questions.length >= 0.5) Sound.play(Sound.GameWinSound());
         else Sound.play(Sound.GameLoseSound());
     };
 
@@ -93,16 +94,15 @@ export default () => {
                             )}
                         </Comp.Info>
                         <Comp.QuestionTitle>
-                            {currentQuestion?.title.split('<b>').map((text, index) => {
-                                if (index === 0) return text;
-                                const [boldText, ...rest] = text.split('</b>');
-                                return (
-                                    <>
-                                        <Comp.QuestionTitleBold>{boldText}</Comp.QuestionTitleBold>
-                                        {rest.join('</b>')}
-                                    </>
-                                );
-                            })}
+                            {currentQuestion?.title
+                                .split('*')
+                                .map((text, index) =>
+                                    index % 2 === 0 ? (
+                                        text
+                                    ) : (
+                                        <Comp.QuestionTitleBold>{text}</Comp.QuestionTitleBold>
+                                    )
+                                )}
                         </Comp.QuestionTitle>
                         <Comp.QuestionAnswers>
                             {answers.map((answer, index) => (
@@ -110,6 +110,7 @@ export default () => {
                                     key={index}
                                     onClick={() => handleAnswer(answer)}
                                     style={{
+                                        cursor: showAnswer ? 'not-allowed' : 'pointer',
                                         backgroundColor: showAnswer
                                             ? answer === questions[round - 1].rightAnswer
                                                 ? '#33dc33d6'
