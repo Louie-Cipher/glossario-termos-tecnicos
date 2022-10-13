@@ -1,7 +1,7 @@
 {
     "questions": [
         {
-            "title": "Qual a definição de <b>Artefato</b>?",
+            "title": "Qual a definição de *Artefato*?",
             "rightAnswer": "Defeito visual no display",
             "wrongAnswers": [
                 "Peça muito antiga, que não é mais produzida",
@@ -9,7 +9,7 @@
             ]
         },
         {
-            "title": "Qual a definição de <b>Boot</b>?",
+            "title": "Qual a definição de *Boot*?",
             "rightAnswer": "Processo de inicialização de um sistema",
             "wrongAnswers": [
                 "Abreviação de robot",
@@ -18,12 +18,28 @@
             ]
         },
         {
-            "title": "Qual a definição de <b>CPU</b>?",
+            "title": "Qual a definição de *CPU*?",
             "rightAnswer": "O Processador do computador",
+            "wrongAnswers": ["A caixa que envolve o computador", "Um tipo de memória"]
+        },
+        {
+            "title": "Qual a definição da sigla *GPU*?",
+            "rightAnswer": "Unidade de Processamento Gráfico",
             "wrongAnswers": [
-                "A caixa que envolve o computador",
-                "Um tipo de memória"
+                "Unificação de Processamento Gráfico",
+                "Unidade de Processos Gerenciados",
+                "Gerenciador de Placa Unificada"
             ]
+        },
+        {
+            "title": "Qual a definição de *Overclock*?",
+            "rightAnswer": "Aumentar a frequência de um componente",
+            "wrongAnswers": ["Alterar a hora do computador", "Inserir mais memória RAM"]
+        },
+        {
+            "title": "Qual dessas siglas NÃO representa um componente de um computador?",
+            "rightAnswer": "API",
+            "wrongAnswers": ["CPU", "GPU", "RAM", "APU"]
         }
     ]
 }
