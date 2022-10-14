@@ -101,21 +101,22 @@ export const Question = styled.div`
     margin-top: 2rem;
 `;
 
-export const QuestionTitle = styled.p`
+export const QuestionTitle = styled.span`
     max-width: 70%;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     font-size: 1.6rem;
     font-weight: 500;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 `;
 
-export const QuestionTitleBold = styled.span`
+export const QuestionTitleBold = styled.b`
     font-size: 1.6rem;
     font-weight: 900;
-    margin-left: 5px;
+    margin: 0;
+    padding: 0;
 `;
 
 export const QuestionAnswers = styled.div`
