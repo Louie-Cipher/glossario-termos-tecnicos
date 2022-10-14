@@ -44,7 +44,7 @@
         {
             "title": "Qual desses termos NÃO é um cargo de TI?",
             "rightAnswer": "CPD",
-            "wrongAnswers": ["Fullstack", "DBA", "DevOps", "SysAdmin"]
+            "wrongAnswers": ["Fullstack", "DBA", "SysAdmin"]
         },
         {
             "title": "Qual é o nome dado ao *núcleo* de um Sistema Operacional?",
@@ -52,16 +52,16 @@
             "wrongAnswers": ["Cloud", "Driver", "Fullstack", "API"]
         },
         {
-            "title": "Qual das alternativas contém a definição correta de *hardware?*",
-            "rightAnswer": "parte física do computador",
+            "title": "Qual das alternativas contém a definição correta de *hardware*?",
+            "rightAnswer": "Parte física do computador",
             "wrongAnswers": [
                 "Parte lógica do computador",
                 "Conjunto de todas as partes da máquina, lógica e física"
             ]
         },
         {
-            "title": "Qual das alternativas contém a definição correta de *software?*",
-            "rightAnswer": "parte lógica do computador",
+            "title": "Qual das alternativas contém a definição correta de *software*?",
+            "rightAnswer": "Parte lógica do computador",
             "wrongAnswers": ["Conjunto de peças de um computador ", "Conjunto de computadores"]
         },
         {
