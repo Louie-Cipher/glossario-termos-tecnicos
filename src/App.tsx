@@ -64,8 +64,8 @@ export default () => {
 
     const handleGameOver = (currentPoints: number) => {
         setCurrentScreen('gameOver');
-        if (currentPoints / questions.length >= 0.5) Sound.play(Sound.GameWinSound());
-        else Sound.play(Sound.GameLoseSound());
+        const percentage = Math.round((currentPoints / questions.length) * 100);
+        Sound.play(Sound.GameOverSound(percentage));
     };
 
     return (
