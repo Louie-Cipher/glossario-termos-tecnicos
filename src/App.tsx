@@ -46,9 +46,7 @@ export default () => {
         if (showAnswer) return;
         const newPoints = answer === currentQuestion?.rightAnswer ? points + 1 : points;
         setPoints(newPoints);
-        Sound.play(
-            answer === currentQuestion?.rightAnswer ? Sound.CorrectSound() : Sound.WrongSound()
-        );
+        Sound.play(Sound.AnswerSound(answer === currentQuestion?.rightAnswer));
 
         setShowAnswer(true);
         await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -64,6 +62,7 @@ export default () => {
 
     const handleGameOver = (currentPoints: number) => {
         setCurrentScreen('gameOver');
+        Howler.stop();
         const percentage = Math.round((currentPoints / questions.length) * 100);
         Sound.play(Sound.GameOverSound(percentage));
     };

@@ -16,30 +16,22 @@ import narutoSad from './assets/sounds/naruto-sadness.mp3';
 import lolDefeat from './assets/sounds/lol-defeat.mp3';
 import amongusDefeat from './assets/sounds/amongus-defeat.mp3';
 
-export const CorrectSound = () => {
-    const sounds = [certaResposta, acertoMizeravi, acertoAhMizeravi];
+const correctSounds = [certaResposta, acertoMizeravi, acertoAhMizeravi];
+const wrongSounds = [errou];
+
+export const AnswerSound = (correct: boolean) => {
+    const sounds = correct ? correctSounds : wrongSounds;
     return sounds[Math.floor(Math.random() * sounds.length)];
 };
 
-export const WrongSound = () => {
-    const sounds = [errou];
-    return sounds[Math.floor(Math.random() * sounds.length)];
-};
+const gameWinSounds = [missionPassed, acabou];
+export const GameWinSound = () => gameWinSounds[Math.floor(Math.random() * gameWinSounds.length)];
 
-export const GameWinSound = () => {
-    const sounds = [missionPassed, acabou];
-    return sounds[Math.floor(Math.random() * sounds.length)];
-};
+const gameTieSounds = [dilmaGanharPerder];
+export const GameTieSound = () => gameTieSounds[Math.floor(Math.random() * gameTieSounds.length)];
 
-export const GameTieSound = () => {
-    const sounds = [dilmaGanharPerder];
-    return sounds[Math.floor(Math.random() * sounds.length)];
-};
-
-export const GameLoseSound = () => {
-    const sounds = [chavesBurro, narutoSad, lolDefeat, amongusDefeat];
-    return sounds[Math.floor(Math.random() * sounds.length)];
-};
+const gameLoseSound = [chavesBurro, narutoSad, lolDefeat, amongusDefeat];
+export const GameLoseSound = () => gameLoseSound[Math.floor(Math.random() * gameLoseSound.length)];
 
 export const GameOverSound = (percent: number) => {
     if (percent > 50) return GameWinSound();
