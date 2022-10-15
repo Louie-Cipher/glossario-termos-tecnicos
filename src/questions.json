@@ -71,8 +71,8 @@
         },
         {
             "title": "Qual desses termos NÃO é uma linguagem de programação?",
-            "rightAnswer": "C*",
-            "wrongAnswers": ["C++", "Lua", "Python"]
+            "rightAnswer": "API",
+            "wrongAnswers": ["C++", "Lua", "Python", "Javascript"]
         }
     ]
 }
