@@ -4,6 +4,7 @@ export const App = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 `;
 
 export const Title = styled.h1`
@@ -17,7 +18,6 @@ export const Content = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
-    min-width: 400px;
     max-width: 600px;
     text-align: center;
     background-color: #333;
@@ -26,39 +26,6 @@ export const Content = styled.div`
     border-radius: 10px;
     color: #fff;
     box-shadow: 0 0 10px #000;
-`;
-
-export const InitMessage = styled.p`
-    font-size: 1em;
-    font-weight: bold;
-    margin: 20px 0;
-`;
-
-export const StartButton = styled.button`
-    background: #a85;
-    color: #000a;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 800;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #000a;
-    height: 50px;
-    margin: 30px 0 0;
-    transition: all 0.2s;
-    :hover {
-        background-color: #faea;
-        font-size: 22px;
-        transition: all 0.2s;
-    }
-    :active {
-        background-color: #faea;
-        font-size: 22px;
-        transition: all 0.2s;
-    }
 `;
 
 export const Info = styled.div`
@@ -148,21 +115,4 @@ export const QuestionAnswer = styled.button`
         padding: 1.5rem 1rem;
         transition: all 0.1s;
     }
-`;
-
-export const GameOver = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-`;
-
-export const GameOverTitle = styled.p`
-    font-size: 2rem;
-    font-weight: bold;
-`;
-
-export const GameOverMessage = styled.p`
-    font-size: 1.5rem;
-    font-weight: bold;
 `;
