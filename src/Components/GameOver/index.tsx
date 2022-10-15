@@ -18,17 +18,15 @@ interface Props {
 
 export default ({ points, questionsCount, startGame }: Props) => {
     return (
-        <>
-            <Comp.GameOver>
-                <Comp.GameOverTitle>Fim de jogo!</Comp.GameOverTitle>
-                <Comp.GameOverMessage>
-                    Você acertou {points} de {questionsCount} termos
-                    <br />
-                    {Phrase(Math.round((points / questionsCount) * 100))}
-                </Comp.GameOverMessage>
+        <Comp.GameOver>
+            <Comp.GameOverTitle>Fim de jogo!</Comp.GameOverTitle>
+            <Comp.GameOverMessage>
+                Você acertou {points} de {questionsCount} termos
+                <br />
+                {Phrase(Math.round((points / questionsCount) * 100))}
+            </Comp.GameOverMessage>
 
-                <Comp.PlayAgainButton onClick={startGame}>Jogar novamente</Comp.PlayAgainButton>
-            </Comp.GameOver>
-        </>
+            <Comp.PlayAgainButton onClick={startGame}>Jogar novamente</Comp.PlayAgainButton>
+        </Comp.GameOver>
     );
 };
