@@ -5,6 +5,7 @@ import Start from './Components/Start';
 import { questions as questionsJSON } from './questions.json';
 import * as Comp from './styles';
 import { Howler } from 'howler';
+import Footer from './Components/Footer';
 
 export interface Question {
     title: string;
@@ -124,6 +125,7 @@ export default () => {
                     </Comp.Question>
                 )}
             </Comp.Content>
+            <Footer />
         </Comp.App>
     );
 };

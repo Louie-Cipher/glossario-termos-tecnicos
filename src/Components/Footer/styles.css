@@ -1,0 +1,87 @@
+#footer {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.4s;
+}
+
+#footer:hover {
+    padding: 20px 0;
+    transition: all 0.2s;
+}
+
+.footerInfoText {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px 8px;
+    color: #fff;
+    background: #0000;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.footerInfoText:hover {
+    color: #000;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.footerInfoSubText {
+    font-size: 0;
+    display: flex;
+    color: #0000;
+    transition: all 0.2s;
+}
+
+.footerInfoText:hover .footerInfoSubText {
+    font-size: 1em;
+    color: #000;
+    transition: all 0.2s;
+}
+
+.footerLink {
+    color: #000;
+    background: #0000;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin: 0 10px;
+    padding: 4px 15px;
+    transition: all 0.2s;
+}
+
+.footerLink:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s;
+}
+
+.footerLinkText {
+    font-weight: 600;
+    text-align: center;
+    font-size: 0;
+    transition: all 0.2s;
+}
+
+.footerLink:hover .footerLinkText {
+    font-size: 1em;
+    transition: 0.2s font-size;
+
+    margin-left: 10px;
+    transition: 0.5s margin-left;
+}
