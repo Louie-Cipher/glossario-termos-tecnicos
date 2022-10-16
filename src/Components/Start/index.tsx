@@ -8,9 +8,7 @@ export default ({ initGame }: Props) => {
     return (
         <>
             <Comp.InitMessage>
-                Serão feitas algumas perguntas sobre qual a definição de cada termo,
-                <br/>
-                ou qual o termo que se refere a definição apresentada.
+                Um quiz sobre termos técnicos da área de TI
             </Comp.InitMessage>
             <Comp.StartButton onClick={initGame}>Começar</Comp.StartButton>
         </>
