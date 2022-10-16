@@ -1,16 +1,21 @@
 import { Howl } from 'howler';
 
+// resposta certa
 import certaResposta from './assets/sounds/certa-resposta.mp3';
 import acertoMizeravi from './assets/sounds/acerto-mizeravi.mp3';
 import acertoAhMizeravi from './assets/sounds/acerto-ah-miseravi.mp3';
 
+// resposta errada
 import errou from './assets/sounds/faustao-errou.mp3';
 
+// gameOver vitória	
 import missionPassed from './assets/sounds/gta-mission-passed.mp3';
 import acabou from './assets/sounds/acabou.mp3';
 
+// gameOver 50%
 import dilmaGanharPerder from './assets/sounds/dilma-ganhar-perder.mp3';
 
+// gameOver derrota
 import chavesBurro from './assets/sounds/chaves-ai-que-burro.mp3';
 import narutoSad from './assets/sounds/naruto-sadness.mp3';
 import lolDefeat from './assets/sounds/lol-defeat.mp3';
