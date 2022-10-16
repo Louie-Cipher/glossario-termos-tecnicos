@@ -22,7 +22,7 @@ export const Content = styled.div`
     text-align: center;
     background-color: #333;
     padding: 0 20px 20px;
-    margin: 10px 0;
+    margin: 10px 0 80px;
     border-radius: 10px;
     color: #fff;
     box-shadow: 0 0 10px #000;
