@@ -1,10 +1,12 @@
 #footer {
     position: fixed;
     bottom: 0;
+    left: 0;
+    width: 100%;
     margin: 0;
     padding: 10px 0;
     width: 100%;
-    background: #000;
+    background: #111;
     color: #fff;
     display: flex;
     flex-direction: row;
@@ -23,16 +25,18 @@
     align-items: center;
     font-size: 1rem;
     font-weight: 700;
-    border-radius: 20px;
-    padding: 10px 8px;
-    color: #fff;
-    background: #0000;
+    border-radius: 50px;
+    padding: 12px;
     text-align: center;
+    color: #fff;
+    /* background: #0000; */
+    box-shadow: inset -2px -2px 4px #000a, inset 2px 2px 4px #000a;
     transition: all 0.2s;
 }
 
 .footerInfoText:hover {
     color: #000;
+    box-shadow: inset -2px -2px 4px #000, inset 2px 2px 4px #000a;
     background: #fff;
     transition: all 0.2s;
 }
@@ -53,7 +57,7 @@
 .footerLink {
     color: #000;
     background: #0000;
-    border-radius: 20px;
+    border-radius: 50px;
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -61,11 +65,13 @@
     justify-content: center;
     height: 30px;
     margin: 0 10px;
-    padding: 4px 15px;
+    padding: 12px;
     transition: all 0.2s;
+    box-shadow: inset -2px -2px 4px #000a, inset 2px 2px 4px #000a;
 }
 
 .footerLink:hover {
+    box-shadow: inset -2px -2px 4px #000, inset 2px 2px 4px #000a;
     background: #fff;
     color: #000;
     transition: all 0.4s;
