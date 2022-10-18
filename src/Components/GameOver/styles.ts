@@ -29,10 +29,15 @@ export const PlayAgainButton = styled.button`
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: inset -4px -4px 12px #000a, 4px 4px 12px #000a;
     transition: all 0.1s;
 
     :hover {
-        font-size: 1.2rem;
+        box-shadow: inset -3px -3px 10px #000a, inset 3px 3px 10px #000a;
+        transition: all 0.1s;
+    }
+    :active {
+        box-shadow: inset -4px -4px 12px #000a, inset 4px 4px 12px #000a;
         transition: all 0.1s;
     }
 `;
