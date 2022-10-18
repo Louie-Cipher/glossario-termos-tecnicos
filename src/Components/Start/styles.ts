@@ -7,7 +7,7 @@ export const InitMessage = styled.p`
 `;
 
 export const StartButton = styled.button`
-    background-color: #fae;
+    background-color: #faea;
     color: #000a;
     width: 100%;
     display: flex;
@@ -17,18 +17,18 @@ export const StartButton = styled.button`
     font-weight: 800;
     border: 0;
     border-radius: 5px;
-    box-shadow: 0 0 5px #000a;
+    box-shadow: inset -2px -2px 4px #000a, 2px 2px 4px #000a;
     height: 50px;
     margin: 30px 0 0;
     transition: all 0.2s;
     :hover {
-        background-color: #faea;
-        font-size: 22px;
+        box-shadow: inset -2px -2px 4px #000a, inset 2px 2px 4px #000a;
+        background-color: #fae8;
         transition: all 0.2s;
     }
     :active {
-        background-color: #faea;
-        font-size: 22px;
+        box-shadow: inset -2px -2px 4px #000e, inset 2px 2px 4px #000e;
+        background-color: #fae8;
         transition: all 0.2s;
     }
 `;
