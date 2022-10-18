@@ -4,6 +4,7 @@ export const App = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
 `;
 
@@ -21,11 +22,11 @@ export const Content = styled.div`
     max-width: 600px;
     text-align: center;
     background-color: #333;
-    padding: 0 20px 20px;
+    padding: 0 25px 25px;
     margin: 10px 0 80px;
-    border-radius: 10px;
+    border-radius: 0.5em;
     color: #fff;
-    box-shadow: 0 0 10px #000;
+    box-shadow: inset -4px -4px 8px #000, 4px 4px 8px #000;
 `;
 
 export const Info = styled.div`
@@ -39,11 +40,14 @@ export const Info = styled.div`
 `;
 
 export const Points = styled.p`
+    background: #fff8;
     font-size: 1em;
     font-weight: bold;
     text-align: right;
     margin: 0;
-    padding: 0;
+    padding: 0.8em;
+    border-radius: 0.8em;
+    box-shadow: inset -4px -4px 8px #0008, 4px 4px 8px #0008;
 `;
 
 export const CurrentRound = styled.span`
@@ -75,7 +79,7 @@ export const QuestionTitle = styled.span`
     font-size: 1.6rem;
     font-weight: 500;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 1em 0 0;
     padding: 0;
 `;
 
@@ -100,19 +104,19 @@ export const QuestionAnswer = styled.button`
     margin-top: 1rem;
     border: none;
     border-radius: 0.5rem;
-    box-shadow: 0 0 10px #000a;
+    box-shadow: inset -4px -4px 12px #000a, 4px 4px 12px #000a;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.1s;
+    transition: all 0.2s;
 
     :hover {
-        padding: 1.5rem 1rem;
-        transition: all 0.1s;
+        box-shadow: inset -4px -4px 12px #000a, inset 4px 4px 12px #000a;
+        transition: all 0.2s;
     }
     :active {
-        padding: 1.5rem 1rem;
-        transition: all 0.1s;
+        box-shadow: inset -4px -4px 12px #000a, inset 4px 4px 12px #000a;
+        transition: all 0.2s;
     }
 `;
