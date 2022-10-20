@@ -89,7 +89,7 @@ export default () => {
                             </Comp.CurrentRound>
                             {round > 1 && (
                                 <Comp.Points>
-                                    {points} {points > 1 ? 'pontos' : 'ponto'}
+                                    {points} ponto{points > 1 && 's'}
                                 </Comp.Points>
                             )}
                         </Comp.Info>
@@ -100,7 +100,9 @@ export default () => {
                                     index % 2 === 0 ? (
                                         text
                                     ) : (
-                                        <Comp.QuestionTitleBold>{text}</Comp.QuestionTitleBold>
+                                        <Comp.QuestionTitleBold key={index}>
+                                            {text}
+                                        </Comp.QuestionTitleBold>
                                     )
                                 )}
                         </Comp.QuestionTitle>
