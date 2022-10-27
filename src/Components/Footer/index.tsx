@@ -6,7 +6,7 @@ export default () => {
         <footer id='footer'>
             <div className='footerInfoText'>
                 Criado por
-                <div className='footerInfoSubText'>: Louie, Isa, Ruan, Nicolas</div>
+                <div className='footerInfoSubText'>: Louie, Isa, Ruan, Nicolas, Luany, M. Akio</div>
             </div>
 
             <FooterLink

@@ -6,7 +6,7 @@
 
 ## Equipe
 
-Louie, Isa, Ruan, Nicolas
+Louie, Isa, Ruan, Nicolas, Luany, M. Akio
 
 ## Tecnologias
 
